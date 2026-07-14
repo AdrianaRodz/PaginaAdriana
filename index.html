@@ -3,7 +3,7 @@ html_content = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educador Profesional - Portafolio y Servicios</title>
+    <title>Adriana Rodz - Portafolio y Servicios Educativos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@ html_content = """<!DOCTYPE html>
         }
         
         :root {
-            --blanco-hueso: #F9F6F0;
-            --azul-marino: #0B2545;
-            --amarillo-mostaza: #EEB902;
+            --blanco-hueso: #FDFBF7; /* Beige muy claro de fondo */
+            --azul-marino: #4A3B32; /* Café oscuro elegante para textos principales y elementos oscuros */
+            --amarillo-mostaza: #C09F80; /* Beige dorado/arena para acentos y botones primarios */
             --blanco-puro: #FFFFFF;
-            --texto-suave: #4A5568;
-            --borde-suave: rgba(11, 37, 69, 0.1);
+            --texto-suave: #6E5D53; /* Café suave para textos secundarios */
+            --borde-suave: rgba(74, 59, 50, 0.1);
         }
 
         body {
@@ -64,7 +64,7 @@ html_content = """<!DOCTYPE html>
 
         .btn-primary {
             background-color: var(--amarillo-mostaza);
-            color: var(--azul-marino);
+            color: var(--blanco-puro);
             border: 1px solid var(--amarillo-mostaza);
         }
 
@@ -89,7 +89,7 @@ html_content = """<!DOCTYPE html>
         header {
             position: sticky;
             top: 0;
-            background-color: rgba(249, 246, 240, 0.95);
+            background-color: rgba(253, 251, 247, 0.95);
             backdrop-filter: blur(8px);
             z-index: 1000;
             border-bottom: 1px solid var(--borde-suave);
@@ -167,13 +167,13 @@ html_content = """<!DOCTYPE html>
             justify-content: center;
         }
 
-        /* Máscara orgánica y moderna para la imagen principal del salón de clases */
+        /* Máscara orgánica y moderna para la imagen principal */
         .hero-image {
             width: 340px;
             height: 380px;
             object-fit: cover;
             border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
-            box-shadow: 0 20px 40px rgba(11, 37, 69, 0.15);
+            box-shadow: 0 20px 40px rgba(74, 59, 50, 0.15);
             border: 4px solid var(--blanco-puro);
         }
 
@@ -245,14 +245,14 @@ html_content = """<!DOCTYPE html>
             background-color: var(--blanco-puro);
             padding: 48px 32px;
             border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.03);
+            box-shadow: 0 10px 30px rgba(74, 59, 50, 0.03);
             border: 1px solid var(--borde-suave);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(11, 37, 69, 0.06);
+            box-shadow: 0 20px 40px rgba(74, 59, 50, 0.06);
         }
 
         .service-icon {
@@ -306,7 +306,7 @@ html_content = """<!DOCTYPE html>
         .portfolio-item:hover {
             border-color: var(--amarillo-mostaza);
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(11, 37, 69, 0.05);
+            box-shadow: 0 12px 30px rgba(74, 59, 50, 0.05);
         }
 
         .portfolio-image {
@@ -352,7 +352,7 @@ html_content = """<!DOCTYPE html>
             padding: 40px;
             border-radius: 4px;
             border-left: 4px solid var(--amarillo-mostaza);
-            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.02);
+            box-shadow: 0 10px 30px rgba(74, 59, 50, 0.02);
         }
 
         .testimonial-text {
@@ -378,7 +378,7 @@ html_content = """<!DOCTYPE html>
             font-size: 0.8rem;
         }
 
-        /* Contacto (Bloque Azul Marino) */
+        /* Contacto (Bloque Café Oscuro) */
         .contact {
             background-color: var(--azul-marino);
             color: var(--blanco-hueso);
@@ -396,7 +396,7 @@ html_content = """<!DOCTYPE html>
         }
 
         .contact-info p {
-            color: #A0AEC0;
+            color: #C09F80;
             margin-bottom: 32px;
         }
 
@@ -426,7 +426,7 @@ html_content = """<!DOCTYPE html>
             width: 100%;
             background: transparent;
             border: none;
-            border-bottom: 1px solid rgba(249, 246, 240, 0.3);
+            border-bottom: 1px solid rgba(253, 251, 247, 0.3);
             padding: 12px 0;
             color: var(--blanco-hueso);
             font-family: 'Inter', sans-serif;
@@ -444,7 +444,7 @@ html_content = """<!DOCTYPE html>
             position: absolute;
             left: 0;
             top: 12px;
-            color: rgba(249, 246, 240, 0.5);
+            color: rgba(253, 251, 247, 0.5);
             pointer-events: none;
             transition: all 0.3s ease;
             font-weight: 300;
@@ -459,11 +459,11 @@ html_content = """<!DOCTYPE html>
 
         /* Footer */
         footer {
-            background-color: #081B33;
-            color: rgba(249, 246, 240, 0.5);
+            background-color: #2C201A; /* Café extra oscuro */
+            color: rgba(253, 251, 247, 0.5);
             padding: 40px 0;
             font-size: 0.85rem;
-            border-top: 1px solid rgba(249, 246, 240, 0.05);
+            border-top: 1px solid rgba(253, 251, 247, 0.05);
         }
 
         .footer-container {
@@ -503,7 +503,7 @@ html_content = """<!DOCTYPE html>
 
         @media (max-width: 768px) {
             nav {
-                display: none; /* Simplificado para móviles en esta plantilla estática */
+                display: none;
             }
             .hero-text h1 {
                 font-size: 2.5rem;
@@ -519,7 +519,7 @@ html_content = """<!DOCTYPE html>
     <!-- Header / Navbar -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Ede.</a>
+            <a href="#" class="logo">Adriana R.</a>
             <nav>
                 <ul>
                     <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -544,7 +544,6 @@ html_content = """<!DOCTYPE html>
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- Imagen de un aula moderna y colaborativa -->
                 <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="Aula de aprendizaje activo" class="hero-image">
             </div>
         </div>
@@ -554,7 +553,6 @@ html_content = """<!DOCTYPE html>
     <section id="sobre-mi">
         <div class="container about-grid">
             <div class="about-visual">
-                <!-- Marco minimalista estilizado con imagen de aula y cita -->
                 <div style="background-color: var(--blanco-puro); border: 1px solid var(--borde-suave); padding: 24px; border-radius: 4px; text-align: center;">
                     <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Salón de clases minimalista" style="width: 100%; height: 260px; object-fit: cover; border-radius: 4px; margin-bottom: 16px;">
                     <p style="margin-top: 10px; font-style: italic; font-size: 0.95rem;">"La enseñanza que deja huella no es la que se hace de cabeza a cabeza, sino de corazón a corazón."</p>
@@ -586,7 +584,7 @@ html_content = """<!DOCTYPE html>
     </section>
 
     <!-- Servicios -->
-    <section id="servicios" style="background-color: rgba(11, 37, 69, 0.02);">
+    <section id="servicios" style="background-color: rgba(74, 59, 50, 0.02);">
         <div class="container">
             <div class="section-header">
                 <h2>Servicios pedagógicos</h2>
@@ -626,7 +624,6 @@ html_content = """<!DOCTYPE html>
             <div class="portfolio-grid">
                 <!-- Item 1 -->
                 <div class="portfolio-item">
-                    <!-- Imagen representativa de aprendizaje dialógico -->
                     <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Estudiantes en mesa de discusión" class="portfolio-image">
                     <div class="portfolio-meta">
                         <span class="portfolio-tag">Metodología Propia</span>
@@ -637,7 +634,6 @@ html_content = """<!DOCTYPE html>
                 </div>
                 <!-- Item 2 -->
                 <div class="portfolio-item">
-                    <!-- Imagen representativa de materiales y recursos del aula -->
                     <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="Libros y libretas de estudio" class="portfolio-image">
                     <div class="portfolio-meta">
                         <span class="portfolio-tag">Recursos</span>
@@ -646,12 +642,32 @@ html_content = """<!DOCTYPE html>
                         <a href="#contacto" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Ver Detalle</a>
                     </div>
                 </div>
+                <!-- Item 3 - Interpretación y Traducción -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Persona traduciendo textos y documentos" class="portfolio-image">
+                    <div class="portfolio-meta">
+                        <span class="portfolio-tag">Interpretación y Traducción</span>
+                        <h3>Servicios de Traducción Editorial y Técnica</h3>
+                        <p>Procesos profesionales orientados a la traducción fluida y precisa de material académico, literario y técnico entre múltiples idiomas.</p>
+                        <a href="#contacto" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Ver Detalle</a>
+                    </div>
+                </div>
+                <!-- Item 4 - Clases de Idiomas -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="Estudiantes practicando diferentes idiomas" class="portfolio-image">
+                    <div class="portfolio-meta">
+                        <span class="portfolio-tag">Idiomas Extranjeros</span>
+                        <h3>Clases de Idiomas: Inglés, Alemán, Italiano y Francés</h3>
+                        <p>Programas personalizados de inmersión lingüística diseñados para acelerar la fluidez conversacional y la preparación de certificaciones oficiales.</p>
+                        <a href="#contacto" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Ver Detalle</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonios -->
-    <section id="testimonios" style="background-color: rgba(11, 37, 69, 0.02);">
+    <section id="testimonios" style="background-color: rgba(74, 59, 50, 0.02);">
         <div class="container">
             <div class="section-header">
                 <h2>Lo que opinan mis alumnos</h2>
@@ -677,6 +693,26 @@ html_content = """<!DOCTYPE html>
                         </div>
                     </div>
                 </div>
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Sus clases de idiomas son increíbles. Logré perfeccionar mi nivel de alemán e italiano en tiempo récord gracias a su paciencia y excelente didáctica dinámica."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Lucía Fernandes</h4>
+                            <p>Estudiante de Lenguas Extranjeras</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 4 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"La consultoría en traducción científica fue impecable. Su rigurosidad metodológica me ayudó a publicar mi primer artículo traducido con excelente ortografía técnica."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ricardo Valdez</h4>
+                            <p>Investigador Asociado</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -690,7 +726,7 @@ html_content = """<!DOCTYPE html>
                 </div>
                 <p>Si buscas transformar tu experiencia de aprendizaje o tienes dudas sobre los programas, envíame un mensaje y te responderé lo antes posible.</p>
                 <ul class="contact-details">
-                    <li>📧 contacto@educador.com</li>
+                    <li>📧 adrianarodz@edu.mx</li>
                     <li>📍 Sesiones en línea y presenciales</li>
                 </ul>
             </div>
@@ -719,7 +755,7 @@ html_content = """<!DOCTYPE html>
     <!-- Footer -->
     <footer>
         <div class="container footer-container">
-            <p>&copy; 2026 Ede. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Adriana R. Todos los derechos reservados.</p>
             <p>Diseño Web Minimalista de UI/UX</p>
         </div>
     </footer>
