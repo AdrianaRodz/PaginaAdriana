@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educador Profesional - Portafolio y Servicios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --blanco-hueso: #F9F6F0;
+            --azul-marino: #0B2545;
+            --amarillo-mostaza: #EEB902;
+            --blanco-puro: #FFFFFF;
+            --texto-suave: #4A5568;
+            --borde-suave: rgba(11, 37, 69, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--blanco-hueso);
+            color: var(--azul-marino);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utilidades de Espaciado y Tipografía */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--texto-suave);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--amarillo-mostaza);
+            color: var(--azul-marino);
+            border: 1px solid var(--amarillo-mostaza);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--azul-marino);
+            border-color: var(--azul-marino);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--azul-marino);
+            border: 1px solid var(--azul-marino);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--azul-marino);
+            color: var(--blanco-hueso);
+        }
+
+        /* Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(249, 246, 240, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--borde-suave);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--azul-marino);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--azul-marino);
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--amarillo-mostaza);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 100px 0;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-circle {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--azul-marino) 0%, #1e3d59 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco-hueso);
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            box-shadow: 0 20px 40px rgba(11, 37, 69, 0.15);
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--amarillo-mostaza);
+        }
+
+        /* Sobre Mí */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 24px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .stat-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--amarillo-mostaza);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--blanco-puro);
+            padding: 48px 32px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.03);
+            border: 1px solid var(--borde-suave);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 37, 69, 0.06);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            font-size: 0.9rem;
+            color: var(--azul-marino);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .service-link:hover {
+            color: var(--amarillo-mostaza);
+        }
+
+        /* Portafolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .portfolio-item {
+            background-color: var(--blanco-puro);
+            border: 1px solid var(--borde-suave);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--amarillo-mostaza);
+        }
+
+        .portfolio-meta {
+            padding: 32px;
+        }
+
+        .portfolio-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--amarillo-mostaza);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .portfolio-meta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-meta p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Testimonios */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--blanco-puro);
+            padding: 40px;
+            border-radius: 4px;
+            border-left: 4px solid var(--amarillo-mostaza);
+            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.02);
+        }
+
+        .testimonial-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            margin-bottom: 24px;
+            color: var(--azul-marino);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 0.8rem;
+        }
+
+        /* Contacto (Bloque Azul Marino) */
+        .contact {
+            background-color: var(--azul-marino);
+            color: var(--blanco-hueso);
+            padding: 100px 0;
+        }
+
+        .contact .section-header h2 {
+            color: var(--blanco-hueso);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+        }
+
+        .contact-info p {
+            color: #A0AEC0;
+            margin-bottom: 32px;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 300;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(249, 246, 240, 0.3);
+            padding: 12px 0;
+            color: var(--blanco-hueso);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--amarillo-mostaza);
+        }
+
+        .form-label {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: rgba(249, 246, 240, 0.5);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
+
+        .form-input:focus ~ .form-label,
+        .form-input:not(:placeholder-shown) ~ .form-label {
+            top: -12px;
+            font-size: 0.8rem;
+            color: var(--amarillo-mostaza);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #081B33;
+            color: rgba(249, 246, 240, 0.5);
+            padding: 40px 0;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(249, 246, 240, 0.05);
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .hero-text {
+                order: 2;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 40px auto;
+            }
+            .hero-ctas {
+                justify-content: center;
+            }
+            .hero-visual {
+                order: 1;
+            }
+            .services-grid, .portfolio-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none; /* Simplificado para móviles en esta plantilla estática */
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Ede.</a>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto" class="btn btn-secondary" style="padding: 10px 20px;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Educación con propósito. Impulsando tu potencial.</h1>
+                <p>Facilito procesos de aprendizaje transformadores y personalizados para ayudarte a dominar nuevas habilidades con claridad, confianza y excelencia académica.</p>
+                <div class="hero-ctas">
+                    <a href="#contacto" class="btn btn-primary">Comenzar Aquí</a>
+                    <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-circle">E</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi">
+        <div class="container about-grid">
+            <div class="about-visual">
+                <!-- Marco minimalista estilizado como marcador de posición -->
+                <div style="background-color: var(--blanco-puro); border: 1px solid var(--borde-suave); padding: 40px; border-radius: 4px; text-align: center;">
+                    <span style="font-size: 5rem;">💡</span>
+                    <p style="margin-top: 20px; font-style: italic;">"La enseñanza que deja huella no es la que se hace de cabeza a cabeza, sino de corazón a corazón."</p>
+                </div>
+            </div>
+            <div class="about-text">
+                <div class="section-header">
+                    <h2>Detrás de la enseñanza</h2>
+                </div>
+                <p>Soy un educador apasionado dedicado a transformar la manera en que se adquiere el conocimiento. Creo en una pedagogía interactiva donde el estudiante es el verdadero protagonista del proceso educativo, fomentando el pensamiento crítico por encima de la memorización pasiva.</p>
+                <p>Con más de 5 años diseñando experiencias de aprendizaje exitosas, combino metodologías activas y herramientas digitales interactivas para adaptarme a los diferentes ritmos y estilos de cada alumno.</p>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h4>5+</h4>
+                        <p>Años de Exp.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>200+</h4>
+                        <p>Alumnos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>98%</h4>
+                        <p>Casos Éxito</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" style="background-color: rgba(11, 37, 69, 0.02);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios pedagógicos</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <span class="service-icon">👤</span>
+                    <h3>Clases Personalizadas</h3>
+                    <p>Sesiones uno a uno adaptadas completamente a tus objetivos individuales, estilo de aprendizaje y necesidades curriculares.</p>
+                    <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <span class="service-icon">👥</span>
+                    <h3>Talleres Grupales</h3>
+                    <p>Programas dinámicos y colaborativos diseñados para desarrollar habilidades específicas de manera interactiva y colectiva.</p>
+                    <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <span class="service-icon">🎓</span>
+                    <h3>Mentoría Académica</h3>
+                    <p>Orientación estratégica para la planificación de proyectos, preparación de exámenes de alto nivel y desarrollo de hábitos de estudio.</p>
+                    <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section id="portafolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Portafolio y Metodologías</h2>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-meta">
+                        <span class="portfolio-tag">Metodología Propia</span>
+                        <h3>El Aprendizaje Dialógico en la Práctica</h3>
+                        <p>Un modelo diseñado para promover la retención a largo plazo y la autoevaluación guiada a través de la interacción constante.</p>
+                        <a href="#contacto" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Ver Detalle</a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-meta">
+                        <span class="portfolio-tag">Recursos</span>
+                        <h3>Guía de Estudio: Métodos de Indagación Activa</h3>
+                        <p>Un cuaderno de trabajo interactivo distribuido de forma gratuita que ha ayudado a más de 100 estudiantes a reestructurar sus hábitos de estudio.</p>
+                        <a href="#contacto" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Ver Detalle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" style="background-color: rgba(11, 37, 69, 0.02);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que opinan mis alumnos</h2>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"La forma en que explica conceptos complejos de forma tan natural cambió por completo mi rendimiento académico. Logré aprobar mis exámenes más difíciles."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sofía Rodríguez</h4>
+                            <p>Estudiante de Licenciatura</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"No solo aprendí el temario, sino que adquirí un método de estudio riguroso y efectivo que sigo utilizando todos los días. Un educador excepcional."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Carlos Mendoza</h4>
+                            <p>Preparación de Exámenes Internacionales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <div class="section-header">
+                    <h2>Trabajemos juntos</h2>
+                </div>
+                <p>Si buscas transformar tu experiencia de aprendizaje o tienes dudas sobre los programas, envíame un mensaje y te responderé lo antes posible.</p>
+                <ul class="contact-details">
+                    <li>📧 contacto@educador.com</li>
+                    <li>📍 Sesiones en línea y presenciales</li>
+                </ul>
+            </div>
+            <div>
+                <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias! Mensaje recibido (Demostración).');">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                        <label for="name" class="form-label">Nombre completo</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                        <label for="email" class="form-label">Correo electrónico</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="message" name="message" class="form-input" placeholder=" " required>
+                        <label for="message" class="form-label">¿En qué puedo ayudarte?</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary" style="border: none; width: auto; min-width: 180px;">Enviar Mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2026 Ede. Todos los derechos reservados.</p>
+            <p>Diseño Web Minimalista de UI/UX</p>
+        </div>
+    </footer>
+
+</body>
+</html>
